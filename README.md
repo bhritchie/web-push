@@ -28,7 +28,7 @@ The code borrows heavily (read: steals shamelessly) from Matt Gaunt's [HTML5 Roc
 
 ## Testing
 
-You need to visit the page so the service worker will be initialized. Then you can test notifications with or without a window open for the app with `curl http://localhost:4567/push`
+You need to visit the page so the service worker will be initialized, and you'll need to grant permission for notifications. Then you can test notifications with or without a window open for the app with `curl http://localhost:4567/push`
 
 ## To do
 

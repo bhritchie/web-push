@@ -12,13 +12,17 @@ end
 
 #Use subscription info to push a notification via GCM
 get "/push" do
-  puts "called GET /push"
-  file = File.open "registration.dat", "r"
-  registrationId = file.gets
-  file.close
 
-  result = RestClient.post ENDPOINT, { 'registration_ids' => [registrationId] }.to_json, :content_type => :json, :accept => :json, :authorization => "key=#{API_KEY}"
-  p result
+  if File.exists?("registration.dat")
+    file = File.open "registration.dat", "r"
+    registrationId = file.gets
+    file.close
+    result = RestClient.post ENDPOINT, { 'registration_ids' => [registrationId] }.to_json, :content_type => :json, :accept => :json, :authorization => "key=#{API_KEY}"
+    p result
+  else
+    puts "No registration has been created"
+  end
+
   204
 end
 

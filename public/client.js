@@ -1,5 +1,12 @@
 var pushEnabled = false
 
+document.querySelector('#notify-me').onclick = function(event) {
+  event.preventDefault();
+  fetch("/push").then(function(data){
+    console.log(data);
+  })
+}
+
 function saveSubscription(subscription) {
   console.log("running saveSubscription")
   console.log(subscription)
@@ -10,7 +17,9 @@ function subscribe() {
   console.log("running subscribe")
   var pushButton = document.querySelector('#toggle-push');
   var pushButtonLabel = document.querySelector('#toggle-push-label');
+  var notifyButton = document.querySelector('#notify-me');
   pushButton.disabled = true;
+  notifyButton.disabled = true;
 
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     serviceWorkerRegistration.pushManager.subscribe({userVisibleOnly: true})
@@ -18,6 +27,7 @@ function subscribe() {
         pushEnabled = true;
         pushButtonLabel.textContent = 'Disable Push Messages';
         pushButton.disabled = false;
+        notifyButton.disabled = false;
         return saveSubscription(subscription);
       })
       .catch(function(error) {
@@ -53,7 +63,9 @@ function initialiseState() {
         // Enable UI for subscribing and unsubscribing from push messages.
         var pushButton = document.querySelector('#toggle-push');
         var pushButtonLabel = document.querySelector('#toggle-push-label');
+        var notifyButton = document.querySelector('#notify-me');
         pushButton.disabled = false;
+        notifyButton.disabled = false;
 
         if (!subscription) {
           // We aren't subscribed to push, so set UI to allow the user to enable push  

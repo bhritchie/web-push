@@ -1,6 +1,6 @@
 # Web Push Notifications Demo
 
-A full-stack application demonstrating the use of web push notifications, with complete set-up instructions. Built against Chrome 45,
+A full-stack application demonstrating the use of web push notifications, with complete set-up instructions. Built and tested against Chrome 45.
 
 The code borrows heavily (read: steals shamelessly) from Matt Gaunt's [HTML5 Rocks](http://www.html5rocks.com/) tutorial, [Push Notifications on the Open Web](http://updates.html5rocks.com/2015/03/push-notificatons-on-the-open-web). A few things differ from what is shown in the tutorial:
 

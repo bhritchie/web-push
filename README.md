@@ -36,7 +36,8 @@ You need to visit the page so the service worker will be initialized, and you'll
 - Fix the UI
 - Associate registrations with users
 - Send a real notification payload once Chrome implements it (it appears that [work has begun](https://code.google.com/p/chromium/issues/detail?id=486040) as of June 24th, 2015.
-- Try not to fail silently when there is no network connection
+- Try not to fail silently so much - e.g. when there is no network connection
+- Should try to resubscribe on `pushsubscriptionchange` event
 
 ## Reading and Resources
 

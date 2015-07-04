@@ -8,7 +8,7 @@ self.addEventListener('push', function(event) {
 
       response.json().then(function(data) {
 
-        var title = 'Sandglaz message:';
+        var title = 'My app message:';
         var body = data.message;
         var icon = '/icon-192x192.png';
         var tag = 'simple-push-demo-notification-tag';

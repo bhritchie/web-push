@@ -10,6 +10,11 @@ get "/" do
   erb :index
 end
 
+get "/manifest.json" do
+  @project_number = PROJECT_NUMBER
+  erb :manifest
+end
+
 #Use subscription info to push a notification via GCM
 get "/push" do
 

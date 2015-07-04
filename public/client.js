@@ -23,10 +23,10 @@ function subscribe() {
       .catch(function(error) {
         console.log(error)
         if (Notification.permission === 'denied') {
-          window.Demo.debug.log('Permission for Notifications was denied');
+          console.debug('Permission for Notifications was denied');
           pushButton.disabled = true;
         } else {
-          window.Demo.debug.log('Unable to subscribe to push.', e);
+          console.debug('Unable to subscribe to push.', error);
           pushButton.disabled = false;
           pushButtonLabel.textContent = 'Enable Push Messages';
         }

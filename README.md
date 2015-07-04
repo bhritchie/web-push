@@ -28,7 +28,7 @@ The code borrows heavily (read: steals shamelessly) from Matt Gaunt's [HTML5 Roc
 
 ## Testing
 
-You need to visit the page so the service worker will be initialized, and you'll need to grant permission for notifications. Then you can test notifications with or without a window open for the app with `curl http://localhost:4567/push`
+You need to visit the page so the service worker will be initialized, and you'll need to grant permission for notifications. Note also that you must be signed in to Chrome in order to register for push notifications. Then you can test notifications with or without a window open for the app with `curl http://localhost:4567/push`
 
 ## To do
 
@@ -37,6 +37,7 @@ You need to visit the page so the service worker will be initialized, and you'll
 - Add a button to generate a push notification directly from the page
 - Associate registrations with users
 - Send a real notification payload once Chrome implements it (it appears that [work has begun](https://code.google.com/p/chromium/issues/detail?id=486040) as of June 24th, 2015.
+- Try not to fail silently when there is no network connection
 
 ## Reading and Resources
 
